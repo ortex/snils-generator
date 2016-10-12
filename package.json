@@ -1,7 +1,7 @@
 {
   "name": "snils-generator",
   "version": "0.0.1",
-  "description": "Generator validity Snils numbers",
+  "description": "Generator valid number's snils",
   "scripts": {
     "build": "webpack -p"
   },
