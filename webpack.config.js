@@ -11,7 +11,10 @@ module.exports = {
     filename: '[name].js'
   },
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
   ],
   module: {
     loaders: [
