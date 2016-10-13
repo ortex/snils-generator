@@ -22,6 +22,9 @@ function leftPad(str, len, ch) {
   return length > 0 ? new Array(length).join(ch) + str : str
 }
 
+function mask(num) {
+  return `${num.substr(0, 3)} ${num.substr(3, 3)} ${num.substr(6, 3)} ${num.substr(9)}`
+}
 
 class App extends React.Component {
 
@@ -32,10 +35,24 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Генератор валидных номеров СНИЛС</h1>
-        <h2>{this.state.number}</h2>
-        <button onClick={() => this.setState({number: generateSnils()})}>Новое значение</button>
+      <div className="container">
+
+        <div className="header clearfix">
+          <h3 className="text-muted">Генератор валидных номеров СНИЛС</h3>
+        </div>
+
+        <div className="jumbotron">
+          <span className="number">{mask(this.state.number)}</span>
+          <p>
+            <button className="btn btn-lg btn-success btn-gen-snils" onClick={() => this.setState({number: generateSnils()})}>
+              Новое значение
+            </button>
+          </p>
+        </div>
+
+        <footer className="footer">
+          <p>&copy; 2016 | <a href="https://github.com/ortex/snils-generator">GitHub</a></p>
+        </footer>
       </div>
     )
   }
