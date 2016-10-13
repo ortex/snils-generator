@@ -1,7 +1,7 @@
 # dependencies
 node_modules
 
-dist
+/dist
 
 .DS_Store
 npm-debug.log
