@@ -72,6 +72,30 @@ body {
     line-height: 1.4;
 }
 
-.btn-gen-snils {
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 14px;
     margin-top: 50px;
+}
+
+.copy-btn {
+    border-radius: 6px;
+    height: 56px;
+    width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #75c3ff;
+    background: #75c3ff;
+}
+
+.copy-btn, .copy-btn:hover, .copy-btn:active, .copy-btn:focus {
+    color: white;
+}
+
+
+.copy-btn svg {
+    flex-shrink: 0;
 }

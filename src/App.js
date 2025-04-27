@@ -43,9 +43,29 @@ class App extends React.Component {
 
         <div className="jumbotron">
           <span className="number">{mask(this.state.number)}</span>
-          <p>
+          <p className="buttons">
             <button className="btn btn-lg btn-success btn-gen-snils" onClick={() => this.setState({number: generateSnils()})}>
               Новое значение
+            </button>
+
+            <button className='btn copy-btn' onClick={() => {
+              if (!this.state.number) return
+
+              void navigator.clipboard.writeText(this.state.number)
+            }}>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+              </svg>
             </button>
           </p>
         </div>
